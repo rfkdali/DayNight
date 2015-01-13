@@ -36,8 +36,18 @@ function jauge () {
 	console.log(i)
 	i++;
 	console.log("test : " + (i-1));
-	document.getElementById('jauge').style.width = s * 15 + 'px';
-	document.getElementById('position').style.left = s * 15 + 'px';
+	//set max width
+	var w = window.innerWidth;
+	console.log('window width = ' + w);
+	
+	var containerWidth = document.getElementById('container').style.width;
+	containerWidth = w;
+	console.log('container width = ' + containerWidth);
+
+	
+
+	document.getElementById('jauge').style.width = (w*s/60) + 'px';
+	document.getElementById('position').style.left = (w*s/60) + 'px';
 	document.getElementById('position').innerHTML = s;
 
 	document.getElementById('jauge2').style.width = m * 15 + 'px';
