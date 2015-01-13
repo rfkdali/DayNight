@@ -25,6 +25,7 @@ function styleSwitch () {
 	}
 	document.getElementsByTagName('head')[0].innerHTML = '<link rel="stylesheet" type="text/css" href="css/styles.css">'+ '<link rel="stylesheet" type="text/css" href="css/jauge.css">' + '<link rel="stylesheet" type="text/css" href="'+dayStyle+'">';
 }
+
 styleSwitch();
 
 
@@ -32,36 +33,36 @@ var i = 0;
 var j = 0;
 var timer;
 
-function jauge () {
-	console.log(i)
-	i++;
-	console.log("test : " + (i-1));
-	//set max width
+function pgBar () {
+
 	var w = window.innerWidth;
 	console.log('window width = ' + w);
+
+	function pgBarWidth () {
+		document.getElementById('jauge1').style.width = ((w * s)/60) + 'px';
+		document.getElementById('jauge2').style.width = ((w * m)/60) + 'px';
+		document.getElementById('jauge3').style.width = ((w * h)/24) + 'px';
+	}
+	pgBarWidth();
+
+	//let's go
 	
-	var containerWidth = document.getElementById('container').style.width;
-	containerWidth = w;
-	console.log('container width = ' + containerWidth);
+	document.getElementById('position1').style.left = ((w * s)/60) + 'px';
+	document.getElementById('position1').innerHTML = s;
+	console.log('seconds : ' + s);
 
 	
-
-	document.getElementById('jauge').style.width = (w*s/60) + 'px';
-	document.getElementById('position').style.left = (w*s/60) + 'px';
-	document.getElementById('position').innerHTML = s;
-
-	document.getElementById('jauge2').style.width = m * 15 + 'px';
-	document.getElementById('position2').style.left = m * 15 + 'px';
+	document.getElementById('position2').style.left = ((w * m)/60) + 'px';
 	document.getElementById('position2').innerHTML = m;
-	console.log(m);
+	console.log('minutes : ' + m);
 
-	document.getElementById('jauge3').style.width = h * 15 + 'px';
-	document.getElementById('position3').style.left = h * 15 + 'px';
+	
+	document.getElementById('position3').style.left = ((w * h)/24) + 'px';
 	document.getElementById('position3').innerHTML = h;
-	console.log(h);
+	console.log('hours : ' + h);
 	
 
-	timer = setTimeout(jauge, 1000)
+	timer = setTimeout(pgBar, 1000);
 
 	if(j==24){
 		stopTimer()
@@ -72,4 +73,4 @@ function stopTimer () {
 	clearTimeout(timer)	
 }
 
-jauge();
+pgBar();
