@@ -1,0 +1,12 @@
+#jauge, #jauge2, #jauge3{
+	width: 0px;
+	max-width: 900px;
+	height: 20px;
+	background-color: orange;
+}
+
+#position, #position2, #position3{
+	width: 900px;
+	position: relative;
+	left: 0px;
+}
