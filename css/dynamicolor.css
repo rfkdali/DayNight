@@ -1,0 +1,24 @@
+.pair{
+	opacity: 0.9;
+}
+
+.impair{
+	opacity: 1;
+}
+
+.red{
+	background-color: red;
+}
+
+.blue{
+	background-color: blue;
+}
+
+.green{
+	background-color: green;
+}
+
+.yellow{
+	background-color: yellow;
+}
+

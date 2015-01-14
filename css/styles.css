@@ -7,8 +7,8 @@ body{
 }
 
 #time{
-	background-color: #CCE4FF;
-	font-size : 2em;
+	font-size : 3em;
 	text-align: center;
 	padding: 5%;
+	color: #333;
 }

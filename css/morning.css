@@ -1,1 +1,5 @@
-body{background-color: #fff;}
+body{background-color: #fff; color: #333;}
+
+#time{
+  background-color: #F2B300;
+}
